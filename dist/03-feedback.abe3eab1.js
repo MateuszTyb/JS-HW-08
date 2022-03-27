@@ -597,17 +597,17 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-var input = document.querySelector("input");
+var email = document.querySelector("input");
 var message = document.querySelector("textarea");
 var submitButton = document.querySelector("button");
 
 var throttle = require("lodash.throttle");
 
-form.addEventListener("input", throttle(input, 500));
+addEventListener("input", throttle(save, 500));
 
 function save() {
   var memory = {
-    email: input.value,
+    email: email.value,
     message: message.value
   };
   storage.save("feedback-form-state", JSON.stringify(memory));
@@ -622,14 +622,14 @@ function loadCache() {
   if (!memory) {
     return;
   } else {
-    input.value = memory.email;
+    email.value = memory.email;
     message.value = memory.message;
   }
 }
 
 function clearData() {
   localStorage.clear();
-  input.value = "";
+  email.value = "";
   message.value = "";
 }
 
@@ -663,7 +663,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53348" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "57269" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
