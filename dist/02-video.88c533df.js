@@ -118,29 +118,29 @@ parcelRequire = (function (modules, cache, entry, globalName) {
 
   return newRequire;
 })({"js/02-video.js":[function(require,module,exports) {
-const iframe = document.querySelector('iframe');
-const player = new Vimeo.Player(iframe);
-let myStorage = localStorage;
-let vid = iframe.src;
-player.on('play', function () {
-  console.log('played the video!');
+var iframe = document.querySelector("iframe");
+var player = new Vimeo.Player(iframe);
+var myStorage = localStorage;
+var vid = iframe.src;
+console.log(localStorage);
+player.on("play", function () {
+  console.log("played the video!");
 });
 player.getVideoTitle().then(function (title) {
-  console.log('title:', title);
+  console.log("title:", title);
 });
 
-const onPlay = function (currentTime) {
-  let time = currentTime;
+var onPlay = function onPlay(currentTime) {
+  var time = currentTime.seconds;
   console.log(time);
-  localStorage.setItem('videoplayer-current-time', JSON.stringify(time));
+  localStorage.setItem("videoplayer-current-time", JSON.stringify(time));
 };
 
-player.on('play', onPlay);
-console.log(myStorage);
-player.setCurrentTime(localStorage.getItem('videoplayer-current-time')).then(function (seconds) {// seconds = the actual time that the player seeked to
+player.on("play", onPlay);
+player.setCurrentTime(localStorage.getItem("videoplayer-current-time")).then(function (seconds) {// seconds = the actual time that the player seeked to
 }).catch(function (error) {
   switch (error.name) {
-    case 'RangeError':
+    case "RangeError":
       // the time was less than 0 or greater than the video’s duration
       break;
 
@@ -177,7 +177,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64351" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53348" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -124,7 +124,7 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports.galleryItems = void 0;
-const galleryItems = [{
+var galleryItems = [{
   preview: 'https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825__340.jpg',
   original: 'https://cdn.pixabay.com/photo/2019/05/14/16/43/himilayan-blue-poppy-4202825_1280.jpg',
   description: 'Hokkaido Flower'
@@ -2027,13 +2027,13 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 // Add imports above this line
 // Change code below this line
 // Dodatkowy import stylów
-const galleryBox = document.querySelector('div.gallery');
+var galleryBox = document.querySelector('div.gallery');
 
-_galleryItems.galleryItems.forEach(photo => {
-  const galleryLink = document.createElement('a');
+_galleryItems.galleryItems.forEach(function (photo) {
+  var galleryLink = document.createElement('a');
   galleryLink.classList.add('gallery__link');
   galleryLink.href = photo.original;
-  const galleryImage = document.createElement('img');
+  var galleryImage = document.createElement('img');
   galleryImage.classList.add('gallery__image');
   galleryImage.dataSource = photo.original;
   galleryImage.alt = photo.description;
@@ -2042,10 +2042,10 @@ _galleryItems.galleryItems.forEach(photo => {
   galleryLink.append(galleryImage);
 });
 
-galleryBox.addEventListener('click', event => {
+galleryBox.addEventListener('click', function (event) {
   event.preventDefault();
 });
-const gallery = new _simplelightbox.default('.gallery a', {
+var gallery = new _simplelightbox.default('.gallery a', {
   captionDelay: 250,
   captionSelector: 'img',
   captionsData: 'alt'
@@ -2079,7 +2079,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64351" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53348" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

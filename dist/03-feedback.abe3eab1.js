@@ -125,9 +125,9 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports.load = exports.save = void 0;
 
-const save = (key, value) => {
+var save = function save(key, value) {
   try {
-    const serializedState = JSON.stringify(value);
+    var serializedState = JSON.stringify(value);
     localStorage.setItem(key, serializedState);
   } catch (error) {
     console.error('Set state error: ', error.message);
@@ -136,9 +136,9 @@ const save = (key, value) => {
 
 exports.save = save;
 
-const load = key => {
+var load = function load(key) {
   try {
-    const serializedState = localStorage.getItem(key);
+    var serializedState = localStorage.getItem(key);
     return serializedState === null ? undefined : JSON.parse(serializedState);
   } catch (error) {
     console.error('Get state error: ', error.message);
@@ -597,27 +597,27 @@ function _getRequireWildcardCache() { if (typeof WeakMap !== "function") return 
 
 function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } if (obj === null || typeof obj !== "object" && typeof obj !== "function") { return { default: obj }; } var cache = _getRequireWildcardCache(); if (cache && cache.has(obj)) { return cache.get(obj); } var newObj = {}; var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor; for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) { var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null; if (desc && (desc.get || desc.set)) { Object.defineProperty(newObj, key, desc); } else { newObj[key] = obj[key]; } } } newObj.default = obj; if (cache) { cache.set(obj, newObj); } return newObj; }
 
-let input = document.querySelector('input');
-let message = document.querySelector('textarea');
-const submitButton = document.querySelector('button');
+var input = document.querySelector("input");
+var message = document.querySelector("textarea");
+var submitButton = document.querySelector("button");
 
-let throttle = require('lodash.throttle');
+var throttle = require("lodash.throttle");
 
-throttle(window.onunload = save, [500], []);
+form.addEventListener("input", throttle(input, 500));
 
 function save() {
-  let memory = {
+  var memory = {
     email: input.value,
     message: message.value
   };
-  storage.save('feedback-form-state', JSON.stringify(memory));
+  storage.save("feedback-form-state", JSON.stringify(memory));
 }
 
 loadCache();
 save();
 
 function loadCache() {
-  let memory = JSON.parse(storage.load('feedback-form-state'));
+  var memory = JSON.parse(storage.load("feedback-form-state"));
 
   if (!memory) {
     return;
@@ -629,11 +629,11 @@ function loadCache() {
 
 function clearData() {
   localStorage.clear();
-  input.value = '';
-  message.value = '';
+  input.value = "";
+  message.value = "";
 }
 
-submitButton.addEventListener('click', clearData);
+submitButton.addEventListener("click", clearData);
 console.log(localStorage);
 },{"./module.js":"js/module.js","lodash.throttle":"../node_modules/lodash.throttle/index.js"}],"../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
@@ -663,7 +663,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "64351" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "53348" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
